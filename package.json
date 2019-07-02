@@ -1,6 +1,6 @@
 {
   "name": "electron-themed-window",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "index.js",
   "typings": "index.d.ts",
   "dependencies": {
@@ -16,6 +16,6 @@
   },
   "gypfile": true,
   "devDependencies": {
-    "@types/node": "^8.5.2"
+    "@types/node": "^10.12.18"
   }
 }
