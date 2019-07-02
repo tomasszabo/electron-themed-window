@@ -1,5 +1,8 @@
 #include <nan.h>
 
+void getSystemDarkMode(const Nan::FunctionCallbackInfo<v8::Value>& info) {
+}
+
 void getDarkMode(const Nan::FunctionCallbackInfo<v8::Value>& info) {
 }
 

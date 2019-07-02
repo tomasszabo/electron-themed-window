@@ -8,6 +8,17 @@ static NSWindow *windowFromBuffer(const v8::Local<v8::Value>& buffer) {
   return view.window;
 }
 
+void getSystemDarkMode(const Nan::FunctionCallbackInfo<v8::Value>& info) {
+  bool result = false;
+
+  if (@available(macOS 10.14, *)) {
+    NSString *osxMode = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
+    result = [@"Dark" isEqualToString:osxMode];
+  } 
+
+  info.GetReturnValue().Set(Nan::New<v8::Boolean>(result));
+}
+
 void getDarkMode(const Nan::FunctionCallbackInfo<v8::Value>& info) {
   if (info.Length() < 1) {
     Nan::ThrowTypeError("Wrong number of arguments");
