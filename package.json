@@ -1,0 +1,21 @@
+{
+  "name": "electron-themed-window",
+  "version": "0.1.0",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "dependencies": {
+    "bindings": "^1.3.0",
+    "nan": "^2.8.0"
+  },
+  "scripts": {
+    "rebuild": "node-gyp rebuild --target=5.0.4 --arch=x64 --dist-url=https://atom.io/download/atom-shell",
+    "test": "node index.js",
+    "install": "node-gyp rebuild",
+    "configure": "node-gyp configure",
+    "example": "cd example && npm start"
+  },
+  "gypfile": true,
+  "devDependencies": {
+    "@types/node": "^8.5.2"
+  }
+}
