@@ -22,7 +22,7 @@ void getDarkMode(const Nan::FunctionCallbackInfo<v8::Value>& info) {
 
   if (@available(macOS 10.14, *)) {
     auto win = windowFromBuffer(info[0]);
-    auto appearance = win.appearance;
+    auto appearance = win.effectiveAppearance;
 
     NSAppearanceName basicAppearance = [appearance bestMatchFromAppearancesWithNames:@[
         NSAppearanceNameAqua,
