@@ -7,12 +7,11 @@
         "<!(node -e \"require('nan')\")",
       ],
       "conditions": [
-        ['OS=="mac"', {
-          "sources": [ "src/mac.mm" ]
-        }],
-        ['OS!="mac"', {
-          "sources": [ "src/default.cc" ]
-        }]
+        [
+          'OS=="mac"', {"sources": [ "src/mac.mm" ]},
+          'OS=="win"', {"sources": [ "src/win.cc" ]},
+          {"sources": [ "src/default.cc" ]}
+        ]
       ]
     }
   ]
