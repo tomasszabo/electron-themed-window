@@ -13,7 +13,17 @@
           },
         ],
         [
-          'OS!="mac"', {
+          'OS=="win"', {
+            "sources": [ "src/win.cc" ],
+            "msvs_settings": {
+              "VCCLCompilerTool": {
+                "AdditionalOptions": [ '-std:c++17' ]
+              }
+            }
+          }
+        ],
+        [
+          'OS!="mac" and OS!="win"', {
             "sources": [ "src/default.cc" ]
           }
         ]
