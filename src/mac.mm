@@ -61,7 +61,7 @@ void setDarkMode(const Nan::FunctionCallbackInfo<v8::Value>& info) {
 
   if (@available(macOS 10.14, *)) {
     auto win = windowFromBuffer(info[0]);
-    bool darkMode = info[1]->BooleanValue();
+    bool darkMode = info[1]->BooleanValue(v8::Isolate::GetCurrent());
 
     if (darkMode == true) {
       win.appearance = [NSAppearance appearanceNamed:NSAppearanceNameDarkAqua];
