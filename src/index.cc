@@ -3,6 +3,7 @@
 void getSystemDarkMode(const Nan::FunctionCallbackInfo<v8::Value>& info);
 void getDarkMode(const Nan::FunctionCallbackInfo<v8::Value>& info);
 void setDarkMode(const Nan::FunctionCallbackInfo<v8::Value>& info);
+void subscribeDarkMode(const Nan::FunctionCallbackInfo<v8::Value> &info);
 
 static void InitModule(v8::Local<v8::Object> exports) {
   v8::Isolate *isolate = exports->GetIsolate();
@@ -14,6 +15,8 @@ static void InitModule(v8::Local<v8::Object> exports) {
                Nan::New<v8::FunctionTemplate>(getDarkMode)->GetFunction(context).ToLocalChecked());
   exports->Set(context, Nan::New("setDarkMode").ToLocalChecked(),
                Nan::New<v8::FunctionTemplate>(setDarkMode)->GetFunction(context).ToLocalChecked());
+  exports->Set(context, Nan::New("subscribeDarkMode").ToLocalChecked(),
+               Nan::New<v8::FunctionTemplate>(subscribeDarkMode)->GetFunction(context).ToLocalChecked());
 }
 
 NODE_MODULE(themed_window, InitModule)
